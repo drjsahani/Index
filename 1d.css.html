@@ -1,88 +1,124 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
+html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* जरूरी: ताकि पैडिंग विड्थ से बाहर न जाए */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    gap: 15px;
-}
+<div class="container">
+    <h2>पंजीकरण (Register)</h2>
+    <form action="#">
+        <div class="form-group">
+            <label for="name">पूरा नाम</label>
+            <input type="text" id="name" placeholder="अपना नाम लिखें" required>
+        </div>
+        <div class="form-group">
+            <label for="email">ईमेल</label>
+            <input type="email" id="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-group">
+            <label for="password">पासवर्ड</label>
+            <input type="password" id="password" placeholder="कम से कम 6 अक्षर" required>
+        </div>
+        <button type="submit">साइन अप करें</button>
+    </form>
+    <div class="footer">
+        पहले से अकाउंट है? <a href="#" style="color: #007bff; text-decoration: none;">लॉगिन करें</a>
+    </div>
+</div>
 
-nav a {
-    text-decoration: none;
-    color: #000;
-    font-size: 13px;
-}
+</body>
+html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mobile Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>AI दस्तावेज़ स्कैनर</h1>
+        
+        <!-- कैमरा व्यू -->
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
 
-nav a:hover { text-decoration: underline; }
+        <div class="controls">
+            <button id="capture-btn">फ़ोटो खींचें (Scan)</button>
+            <button id="download-btn" style="display:none;">Download PDF</button>
+        </div>
 
-.sign-in {
-    background: #1a73e8;
-    color: white;
-    border: none;
-    padding: 9px 23px;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-}
+        <div id="preview-container">
+            <h3>Preview:</h3>
+            <img id="photo-preview" src="" alt="">
+        </div>
+    </div>
 
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-}
-
-.logo { width: 272px; }
-
-.search-box {
-    margin-top: 30px;
-    width: 90%;
-    max-width: 584px;
-    border: 1px solid #dfe1e5;
-    padding: 10px 20px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-}
-
-.search-box:hover { box-shadow: 0 1px 6px rgba(32,33,36,0.28); }
-
-#search-input {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 0 10px;
-}
-
-.fa-search { color: #9aa0a6; }
-.mic-icon { width: 24px; cursor: pointer; }
-
-.buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 12px;
-}
-
-.buttons button {
-    background: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    padding: 10px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.buttons button:hover { border: 1px solid #dadce0; }
-
-.lang { font-size: 13px; margin-top: 25px; }
-.lang a { color: #1a0dab; text-decoration: none; margin-left: 5px; }
-    
+    <script src="script.js"></script>
+    <!-- PDF बनाने के लिए लाइब्रेरी -->
+    <script src="https://cdnjs.cloudflare.com"></script>
+</body>
+</html>
